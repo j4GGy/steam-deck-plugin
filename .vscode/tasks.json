@@ -89,6 +89,18 @@
             ],
             "problemMatcher": []
         },
+        // CUSTOM
+        {
+            "label": "build-deploy",
+            "detail": "Builds and deploys to deck via SSH",
+            "dependsOrder": "sequence",
+            "group": "build",
+            "dependsOn": [
+                "build",
+                "deploy"
+            ],
+            "problemMatcher": []
+        },
         // ALL-IN-ONE
         {
             "label": "allinone",

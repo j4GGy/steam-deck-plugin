@@ -5,10 +5,11 @@ specifiers:
   '@rollup/plugin-json': ^4.1.0
   '@rollup/plugin-node-resolve': ^13.3.0
   '@rollup/plugin-replace': ^4.0.0
+  '@rollup/plugin-terser': ^0.2.0
   '@rollup/plugin-typescript': ^8.3.3
   '@types/react': 16.14.0
   '@types/webpack': ^5.28.0
-  decky-frontend-lib: ^3.0.0
+  decky-frontend-lib: ^3.13.0
   react-icons: ^4.4.0
   rollup: ^2.77.1
   rollup-plugin-import-assets: ^1.1.1
@@ -17,7 +18,7 @@ specifiers:
   typescript: ^4.7.4
 
 dependencies:
-  decky-frontend-lib: 3.0.0
+  decky-frontend-lib: 3.13.0
   react-icons: 4.4.0
 
 devDependencies:
@@ -25,6 +26,7 @@ devDependencies:
   '@rollup/plugin-json': 4.1.0_rollup@2.77.1
   '@rollup/plugin-node-resolve': 13.3.0_rollup@2.77.1
   '@rollup/plugin-replace': 4.0.0_rollup@2.77.1
+  '@rollup/plugin-terser': 0.2.0_rollup@2.77.1
   '@rollup/plugin-typescript': 8.3.3_ekpmegaybmymq5m2rlmygb35zm
   '@types/react': 16.14.0
   '@types/webpack': 5.28.0
@@ -121,6 +123,21 @@ packages:
       '@rollup/pluginutils': 3.1.0_rollup@2.77.1
       magic-string: 0.25.9
       rollup: 2.77.1
+    dev: true
+
+  /@rollup/plugin-terser/0.2.0_rollup@2.77.1:
+    resolution: {integrity: sha512-UBr4WNXBFipKW2C2db9JIzIdq9bFZsaTZwKeAd9Y0N9Pv9G2XgRhaimGdotx1+Wf/2XTuTJ+FVS2SO+y2WyiUQ==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^2.x || ^3.x
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      rollup: 2.77.1
+      serialize-javascript: 6.0.0
+      smob: 0.0.6
+      terser: 5.16.1
     dev: true
 
   /@rollup/plugin-typescript/8.3.3_ekpmegaybmymq5m2rlmygb35zm:
@@ -418,10 +435,8 @@ packages:
     resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
     dev: true
 
-  /decky-frontend-lib/3.0.0:
-    resolution: {integrity: sha512-ZqJ9ii7QoYWHFfkU8hV82IHi3+McZDmE4wS22duXpgRI8r5BBMiZItw6tYkc24ZtsJIVso83FFt7adcEBqBwJA==}
-    dependencies:
-      minimist: 1.2.6
+  /decky-frontend-lib/3.13.0:
+    resolution: {integrity: sha512-NjSUhAKqlt2CSWDjyAsWa0R0xOVGJbChCIyCkAUhnsnGG4nvH32yfvIifhgHjlFZ7bduqeq3QUacP0L3h1Z+Mg==}
     dev: false
 
   /deepmerge/4.2.2:
@@ -638,6 +653,7 @@ packages:
 
   /minimist/1.2.6:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
+    dev: true
 
   /neo-async/2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
@@ -769,6 +785,10 @@ packages:
       shelljs: 0.8.5
     dev: true
 
+  /smob/0.0.6:
+    resolution: {integrity: sha512-V21+XeNni+tTyiST1MHsa84AQhT1aFZipzPpOFAVB8DkHzwJyjjAmt9bgwnuZiZWnIbMo2duE29wybxv/7HWUw==}
+    dev: true
+
   /source-map-support/0.5.21:
     resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
     dependencies:
@@ -828,6 +848,17 @@ packages:
 
   /terser/5.14.2:
     resolution: {integrity: sha512-oL0rGeM/WFQCUd0y2QrWxYnq7tfSuKBiqTjRPWrRgB46WD/kiwHwF8T23z78H6Q6kGCuuHcPB+KULHRdxvVGQA==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      '@jridgewell/source-map': 0.3.2
+      acorn: 8.8.0
+      commander: 2.20.3
+      source-map-support: 0.5.21
+    dev: true
+
+  /terser/5.16.1:
+    resolution: {integrity: sha512-xvQfyfA1ayT0qdK47zskQgRZeWLoOQ8JQ6mIgRGVNwZKdQMU+5FkCBjmv4QjcrTzyZquRw2FVtlJSRUmMKQslw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
